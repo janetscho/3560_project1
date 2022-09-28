@@ -1,4 +1,8 @@
 
+/**
+ * @author Janet Cho A question class to keep track of the question title and if
+ *         it is multiple choice or single choice.
+ */
 public class Question {
 
 	static boolean multiple; // true if multiple ans, false if only one answer
