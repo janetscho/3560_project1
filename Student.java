@@ -2,7 +2,7 @@
 public class Student {
 
 	String id;
-	String answer; // a, b, c, d, right, wrong
+	String answer; // a, b, c, d, true, false
 
 	public Student() {
 		this.id = "";
@@ -33,8 +33,8 @@ public class Student {
 	}
 
 	// prints student with answer
-	public String printAns() {
-		return "Student: " + id + " Answer: " + answer;
+	public String toString() {
+		return "Student: " + id + "\tAnswer: " + answer;
 	}
 
 }

@@ -28,11 +28,11 @@ public class Question {
 	}
 
 	// print for user
-	public String questionTime() {
+	public String toString() {
 		if (multiple == true) {
-			return "Please select 1 or more answers.";
+			return "Please select 1 or more answers between A, B, C, or D.";
 		} else
-			return "Please select only 1 answer.";
+			return "Please select only 1 answer between T or F.";
 	}
 
 }

@@ -5,16 +5,9 @@ import java.util.HashMap;
 //use amount of students to create an array to store if the student's answer for the quesiton was received
 
 public class VotingService {
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	int d = 0;
-	int right = 0;
-	int wrong = 0;
-
 	Student[] studs;
-	String[] ids; // to keep track of whether or not the student already voted and whatnot
-	Question question;
+	String[] ids; // to keep track of whether or not the student already voted
+
 	HashMap<Character, Integer> count = new HashMap<Character, Integer>();
 
 	public VotingService(Student[] studs) {
@@ -29,8 +22,12 @@ public class VotingService {
 			totalAnswers(temp);
 		}
 
-		printTime(count);
-	}
+		System.out.println("\nTotal: ");
+		count.entrySet().forEach(option -> {
+			System.out.print(option.getKey() + ": " + option.getValue() + "\t");
+		}); // prints results
+		System.out.println();
+	} // end increment
 
 	public void totalAnswers(String ans) {
 		// key: character, value: # of character
@@ -45,11 +42,6 @@ public class VotingService {
 				count.put(temp, 1);
 		} // increment through student answer; if it exists, increment. if it doesn't,
 			// create new option
-	}
+	} // end totalAnswers
 
-	public void printTime(HashMap<Character, Integer> count) {
-		count.entrySet().forEach(option -> {
-			System.out.println(option.getKey() + ": " + option.getValue());
-		});
-	}
 }
